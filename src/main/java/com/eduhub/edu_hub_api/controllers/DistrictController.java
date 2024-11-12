@@ -15,7 +15,7 @@ public class DistrictController {
 
     private final DistrictService districtService;
 
-    @GetMapping("/city/{cityId}")
+    @GetMapping("/api/district/{cityId}")
     public ResponseEntity<List<GetDistrictListResponse>> getDistrictsByCityId(@PathVariable int cityId) {
         return districtService.getDistrictsByCityId(cityId);
     }
