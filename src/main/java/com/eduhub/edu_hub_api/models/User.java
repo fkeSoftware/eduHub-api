@@ -48,11 +48,13 @@ public class User extends BaseEntity {
     @Column(name = "birth_date")
     private LocalDate birthDate;
 
-    @Column(name = "city")
-    private String city;
+    @ManyToOne
+    @JoinColumn(name = "city_id", referencedColumnName = "id")
+    private City city;
 
-    @Column(name = "district")
-    private String district;
+    @ManyToOne
+    @JoinColumn(name = "district_id", referencedColumnName = "id")
+    private District district;
 
     @Column(name = "address")
     private String address;

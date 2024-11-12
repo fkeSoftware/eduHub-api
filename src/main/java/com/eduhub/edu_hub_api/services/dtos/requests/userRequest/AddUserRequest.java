@@ -1,4 +1,4 @@
-package com.eduhub.edu_hub_api.services.dtos.responses.userResponse;
+package com.eduhub.edu_hub_api.services.dtos.requests.userRequest;
 
 import com.eduhub.edu_hub_api.models.City;
 import com.eduhub.edu_hub_api.models.District;
@@ -11,9 +11,7 @@ import java.time.LocalDate;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-
-public class GetUserListResponse {
-    private int id;
+public class AddUserRequest {
     private String firstName;
     private String lastName;
     private String username;
@@ -25,5 +23,4 @@ public class GetUserListResponse {
     private City cityName;
     private District districtName;
     private String address;
-
 }
