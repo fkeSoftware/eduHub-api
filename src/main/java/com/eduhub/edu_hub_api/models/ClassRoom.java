@@ -23,7 +23,7 @@ public class ClassRoom extends BaseEntity{
     @Column(name = "title")
     private String title;
 
-    @OneToMany(mappedBy = "classrooms", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "classroom", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<Student> studentList;
 

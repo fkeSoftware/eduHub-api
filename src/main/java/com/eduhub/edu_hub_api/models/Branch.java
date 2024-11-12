@@ -24,7 +24,7 @@ public class Branch extends BaseEntity {
     @Column(name = "title")
     private String title;
 
-    @OneToMany(mappedBy = "branches", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "branch", cascade = CascadeType.ALL)
     @JsonIgnore
     private List<Teacher> teacherList;
 }
