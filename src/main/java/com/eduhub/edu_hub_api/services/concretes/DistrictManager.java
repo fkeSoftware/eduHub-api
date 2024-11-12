@@ -20,13 +20,12 @@ public class DistrictManager implements DistrictService {
     private ModelMapperService mapperService;
 
     @Override
-    public ResponseEntity<List<GetDistrictListResponse>>GetAllDistricts(){
-        List<District> districts = this.districtRepository.findAll();
-
-        List<GetDistrictListResponse> districtListResponses = districts.stream()
-                .map(district -> this.mapperService.forResponse()
-                        .map(district, GetDistrictListResponse.class))
+    public ResponseEntity<List<GetDistrictListResponse>> getDistrictsByCityId(int cityId) {
+        List<District> districts = this.districtRepository.findByCityId(cityId);
+        List<GetDistrictListResponse> response = districts.stream()
+                .map(district -> mapperService.forResponse().map(district, GetDistrictListResponse.class))
                 .collect(Collectors.toList());
-        return ResponseEntity.ok(districtListResponses);
+
+        return ResponseEntity.ok(response);
     }
 }

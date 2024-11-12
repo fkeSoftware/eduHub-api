@@ -6,5 +6,5 @@ import org.springframework.http.ResponseEntity;
 import java.util.List;
 
 public interface DistrictService {
-    ResponseEntity<List<GetDistrictListResponse>>GetAllDistricts();
+    ResponseEntity<List<GetDistrictListResponse>> getDistrictsByCityId(int cityId);
 }
