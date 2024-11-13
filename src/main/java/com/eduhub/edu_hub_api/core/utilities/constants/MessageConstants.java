@@ -1,7 +1,7 @@
 package com.eduhub.edu_hub_api.core.utilities.constants;
 
 public enum MessageConstants {
-    USER("User"), BRANCH("Branch"), STUDENT("Student"), PARENT("Parent"), TEACHER("Teacher"), CLASSROOM("Classroom"),
+    USER("User"), BRANCH("Branch"), STUDENT("Student"), PARENT("Parent"), TEACHER("Teacher"), CLASSROOM("Classroom"), CITY("City"), DISTRICT("District"),
     ADD("insertion successful.."),
     UPDATE("update successful.."),
     DELETE("deletion successful.."),

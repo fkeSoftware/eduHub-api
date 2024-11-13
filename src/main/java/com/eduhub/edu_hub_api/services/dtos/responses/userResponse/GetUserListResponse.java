@@ -16,14 +16,14 @@ public class GetUserListResponse {
     private int id;
     private String firstName;
     private String lastName;
-    private String username;
+    private String userName;
     private String email;
     private String idNo;
     private String password;
     private String phoneNumber;
     private LocalDate birthDate;
-    private City cityName;
-    private District districtName;
+    private int cityId;
+    private int districtId;
     private String address;
 
 }
