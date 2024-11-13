@@ -25,7 +25,6 @@ public class UserManager implements UserService {
 
         List<GetUserListResponse> userResponses = users.stream().map(user -> this.mapperService.forResponse().map(user, GetUserListResponse.class)).collect(Collectors.toList());
 
-
         return ResponseEntity.ok(userResponses);
 
     }

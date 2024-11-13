@@ -1,5 +1,6 @@
 package com.eduhub.edu_hub_api.services.concretes;
 
+import com.eduhub.edu_hub_api.core.utilities.constants.MessageConstants;
 import com.eduhub.edu_hub_api.core.utilities.mappers.ModelMapperService;
 import com.eduhub.edu_hub_api.models.Branch;
 import com.eduhub.edu_hub_api.repositories.BranchRepository;
@@ -28,11 +29,12 @@ public class BranchManager implements BranchService {
         return ResponseEntity.ok(branchResponses);
     }
 
-    public ResponseEntity<String> addBranch(AddBranchRequest addBranchRequest){
+    public ResponseEntity<String> addBranch(AddBranchRequest addBranchRequest) {
         Branch branch = mapperService.forRequest().map(addBranchRequest, Branch.class);
         branchRepository.save(branch);
 
-        return ResponseEntity.ok("New Branch Created !");
+        String successMessage = MessageConstants.BRANCH.getMessage() + " " + MessageConstants.ADD.getMessage();
+        return ResponseEntity.ok(successMessage);
     }
 
 }
