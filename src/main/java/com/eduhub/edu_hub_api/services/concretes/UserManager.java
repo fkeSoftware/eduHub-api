@@ -25,7 +25,6 @@ import java.util.stream.Collectors;
 public class UserManager implements UserService {
     private final UserRepository userRepository;
     private final DistrictRepository districtRepository;
-    private final CityRepository cityRepository;
     private ModelMapperService mapperService;
 
     public ResponseEntity<List<GetUserListResponse>> getAllUsers() {
@@ -39,12 +38,11 @@ public class UserManager implements UserService {
     public ResponseEntity<String> addUser(AddUserRequest addUserRequest){
         District district = districtRepository.findById(addUserRequest.getDistrictId())
                 .orElseThrow(() -> new RuntimeException(MessageConstants.DISTRICT.getMessage() + " " + MessageConstants.ID_NOT_FOUND.getMessage()));
-        City city = cityRepository.findById(addUserRequest.getCityId())
-                .orElseThrow(() -> new RuntimeException(MessageConstants.CITY.getMessage() + " " + MessageConstants.ID_NOT_FOUND.getMessage()));
+
         User user = mapperService.forRequest().map(addUserRequest, User.class);
         //user.setIdNo(addUserRequest.getIdNo());
         user.setDistrict(district);
-        user.setCity(city);
+
         userRepository.save(user);
 
         String successMessage = MessageConstants.USER.getMessage() + " " + MessageConstants.ADD.getMessage();

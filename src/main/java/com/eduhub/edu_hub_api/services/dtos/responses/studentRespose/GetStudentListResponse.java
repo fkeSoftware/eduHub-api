@@ -18,6 +18,6 @@ public class GetStudentListResponse {
     private ClassRoom classroomName;
     private Teacher teacherName;
     private Parent parentName;
-    private User user;
+    private int userId;
 
 }
