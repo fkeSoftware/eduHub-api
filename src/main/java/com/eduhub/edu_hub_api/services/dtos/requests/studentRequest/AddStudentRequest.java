@@ -1,4 +1,4 @@
-package com.eduhub.edu_hub_api.services.dtos.responses.studentRespose;
+package com.eduhub.edu_hub_api.services.dtos.requests.studentRequest;
 
 import com.eduhub.edu_hub_api.models.ClassRoom;
 import com.eduhub.edu_hub_api.models.Parent;
@@ -12,12 +12,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class GetStudentListResponse {
-    private int id;
+public class AddStudentRequest {
     private String studentNo;
-    private ClassRoom classroomName;
-    private Teacher teacherName;
-    private Parent parentName;
-    private User user;
-
+    //private int classroomId;
+    //private int teacherId;
+    //private int parentId;
+    private int userId;
 }
