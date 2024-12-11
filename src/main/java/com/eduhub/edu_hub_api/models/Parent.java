@@ -20,6 +20,9 @@ public class Parent extends BaseEntity {
     @Column(name = "id")
     private int id;
 
+    @Column(name = "relationship")
+    private String relationship;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
